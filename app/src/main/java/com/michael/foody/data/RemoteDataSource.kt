@@ -1,5 +1,6 @@
-package com.michael.foody
+package com.michael.foody.data
 
+import com.michael.foody.data.network.FoodRecipesApi
 import com.michael.foody.models.FoodRecipe
 import retrofit2.Response
 import javax.inject.Inject

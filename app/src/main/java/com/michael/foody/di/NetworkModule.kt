@@ -1,7 +1,7 @@
 package com.michael.foody.di
 
-import com.michael.foody.Constants.Companion.BASE_URL
-import com.michael.foody.FoodRecipesApi
+import com.michael.foody.util.Constants.Companion.BASE_URL
+import com.michael.foody.data.network.FoodRecipesApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
