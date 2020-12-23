@@ -6,7 +6,7 @@
     <data>
         <variable
         name="mainViewModel"
-        type="com.michael.foody.MainViewModel" />
+        type="com.michael.foody.viewmodels.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
