@@ -16,6 +16,7 @@ import com.michael.foody.util.Constants.Companion.QUERY_API_KEY
 import com.michael.foody.util.Constants.Companion.QUERY_DIET
 import com.michael.foody.util.Constants.Companion.QUERY_FILL_INGREDIENTS
 import com.michael.foody.util.Constants.Companion.QUERY_NUMBER
+import com.michael.foody.util.Constants.Companion.QUERY_SEARCH
 import com.michael.foody.util.Constants.Companion.QUERY_TYPE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
@@ -69,12 +70,23 @@ class RecipesViewModel @ViewModelInject constructor(
 
     }
 
+    fun applySearchQuery(searchQuery: String): HashMap<String, String> {
+        val queries: HashMap<String, String> = HashMap()
+        queries[QUERY_SEARCH] = searchQuery
+        queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
+        queries[QUERY_API_KEY] = API_KEY
+        queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
+        queries[QUERY_FILL_INGREDIENTS] = "true"
+        return queries
+
+    }
+
     fun showNetworkStatus() {
         if (!networkStatus) {
             Toast.makeText(getApplication(), "No Internet Connection.", Toast.LENGTH_SHORT).show()
             saveBackOnline(true)
-        } else if(networkStatus){
-            if (backOnline){
+        } else if (networkStatus) {
+            if (backOnline) {
                 Toast.makeText(getApplication(), "We're back online.", Toast.LENGTH_SHORT).show()
                 saveBackOnline(false)
             }
