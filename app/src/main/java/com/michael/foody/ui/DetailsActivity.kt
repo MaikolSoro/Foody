@@ -13,6 +13,7 @@ import com.michael.foody.databinding.ActivityDetailsBinding
 import com.michael.foody.ui.fragments.ingredients.IngredientsFragment
 import com.michael.foody.ui.fragments.instructions.InstructionsFragment
 import com.michael.foody.ui.fragments.overview.OverviewFragment
+import com.michael.foody.util.Constants.Companion.RECIPE_RESULT_KEY
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -40,7 +41,7 @@ class DetailsActivity : AppCompatActivity() {
         titles.add("Instructions")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable("recipesBundle", args.result)
+        resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
         val pagerAdapter = PagerAdapter(
             resultBundle,
