@@ -1,7 +1,7 @@
 package com.michael.foody.data
 
 import com.michael.foody.data.database.RecipesDao
-import com.michael.foody.data.database.RecipesEntity
+import com.michael.foody.data.database.entities.RecipesEntity
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
