@@ -5,9 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.michael.foody.R
 import com.michael.foody.adapters.IngredientsAdapter
 import com.michael.foody.databinding.FragmentIngredientsBinding
 import com.michael.foody.models.Result
