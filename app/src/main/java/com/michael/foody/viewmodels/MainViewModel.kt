@@ -31,12 +31,12 @@ class MainViewModel @ViewModelInject constructor(
             repository.local.insertRecipes(recipesEntity)
         }
 
-     fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity) =
+    fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertFavoriteRecipes(favoritesEntity)
         }
 
-     fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) =
+    fun deleteFavoriteRecipe(favoritesEntity: FavoritesEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteFavoriteRecipe(favoritesEntity)
         }
@@ -97,6 +97,7 @@ class MainViewModel @ViewModelInject constructor(
     }
 
     private fun handleFoodRecipesResponse(response: retrofit2.Response<FoodRecipe>): NetworkResult<FoodRecipe>? {
+
         when {
             response.message().toString().contains("timeout") -> {
                 return NetworkResult.Error("Timeout")
