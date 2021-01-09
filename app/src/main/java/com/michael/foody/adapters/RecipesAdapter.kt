@@ -11,14 +11,16 @@ import com.michael.foody.util.RecipesDiffUtil
 
 class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
-    private  var recipes = emptyList<Result>()
+    private var recipes = emptyList<Result>()
+
     class MyViewHolder(private val binding: RecipesRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(result: Result){
-                binding.result = result
-                binding.executePendingBindings()
-            }
+        fun bind(result: Result) {
+            binding.result = result
+            binding.executePendingBindings()
+        }
+
         companion object {
             fun from(parent: ViewGroup): MyViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
@@ -30,7 +32,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-       return MyViewHolder.from(parent)
+        return MyViewHolder.from(parent)
     }
 
 
@@ -44,8 +46,8 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         return recipes.size
     }
 
-    fun setData(newData: FoodRecipe){
-        val recipesDiffUtil =  RecipesDiffUtil(recipes,newData.results)
+    fun setData(newData: FoodRecipe) {
+        val recipesDiffUtil = RecipesDiffUtil(recipes, newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
         recipes = newData.results
         diffUtilResult.dispatchUpdatesTo(this)
