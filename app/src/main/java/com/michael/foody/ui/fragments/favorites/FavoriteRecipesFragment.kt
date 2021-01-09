@@ -12,8 +12,9 @@ import com.michael.foody.R
 import com.michael.foody.adapters.FavoriteRecipesAdapter
 import com.michael.foody.databinding.FragmentFavoriteRecipesBinding
 import com.michael.foody.viewmodels.MainViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class FavoriteRecipesFragment : Fragment() {
 
     private val mAdapter: FavoriteRecipesAdapter by lazy { FavoriteRecipesAdapter() }
@@ -32,6 +33,7 @@ class FavoriteRecipesFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.mainViewModel = mainViewModel
         binding.mAdapter = mAdapter
+
         setupRecyclerView(binding.favoriteRecipesRecyclerView)
 
         return binding.root

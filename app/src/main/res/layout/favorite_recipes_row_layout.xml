@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="favoritesEntity"
             type="com.michael.foody.data.database.entities.FavoritesEntity" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/recipesRowLayout"
+            android:id="@+id/favoriteRecipesRowLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            tools:ignore="MissingConstraints">
+            android:layout_marginBottom="4dp">
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/favorite_row_cardView"
@@ -58,9 +54,9 @@
                         android:layout_marginTop="12dp"
                         android:layout_marginEnd="12dp"
                         android:ellipsize="end"
-                        android:text="@{favoritesEntity.result.title}"
                         android:fontFamily="@font/courgette"
                         android:maxLines="2"
+                        android:text="@{favoritesEntity.result.title}"
                         android:textColor="@color/darker"
                         android:textSize="20sp"
                         android:textStyle="bold"
@@ -71,12 +67,12 @@
 
                     <TextView
                         android:id="@+id/favorite_description_textView"
-                        android:text="@{favoritesEntity.result.summary}"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:ellipsize="end"
                         android:maxLines="3"
+                        android:text="@{favoritesEntity.result.summary}"
                         android:textColor="@color/darkGray"
                         app:layout_constraintEnd_toEndOf="@+id/favorite_title_textView"
                         app:layout_constraintStart_toStartOf="@+id/favorite_title_textView"
@@ -97,12 +93,12 @@
 
                     <TextView
                         android:id="@+id/favorite_heart_textView"
+                        setNumberOfLikes="@{favoritesEntity.result.aggregateLikes}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        setNumberOfLikes="@{favoritesEntity.result.aggregateLikes}"
                         android:text="100"
-                        android:textColor="@color/red"
                         android:textAlignment="center"
+                        android:textColor="@color/red"
                         app:layout_constraintStart_toStartOf="@+id/favorite_description_textView"
                         app:layout_constraintTop_toBottomOf="@+id/favorite_heart_imageView" />
 
@@ -110,11 +106,11 @@
                         android:id="@+id/favorite_clock_imageView"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:tint="@color/yellow"
                         app:layout_constraintEnd_toEndOf="@+id/favorite_clock_textView"
                         app:layout_constraintStart_toStartOf="@+id/favorite_clock_textView"
                         app:layout_constraintTop_toTopOf="@+id/favorite_heart_imageView"
-                        app:srcCompat="@drawable/ic_clock" />
+                        app:srcCompat="@drawable/ic_clock"
+                        app:tint="@color/yellow" />
 
                     <TextView
                         android:id="@+id/favorite_clock_textView"
@@ -123,8 +119,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
                         android:text="100"
-                        android:textColor="@color/yellow"
                         android:textAlignment="center"
+                        android:textColor="@color/yellow"
                         app:layout_constraintStart_toEndOf="@+id/favorite_heart_textView"
                         app:layout_constraintTop_toBottomOf="@+id/favorite_clock_imageView"
                         app:layout_editor_absoluteY="144dp" />
@@ -141,10 +137,10 @@
 
                     <TextView
                         android:id="@+id/favorite_leaf_textView"
+                        applyVeganColor="@{favoritesEntity.result.vegan}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
-                        applyVeganColor="@{favoritesEntity.result.vegan}"
                         android:text="Vegan"
                         android:textAlignment="center"
                         app:layout_constraintStart_toEndOf="@+id/favorite_clock_textView"
@@ -154,5 +150,4 @@
 
             </com.google.android.material.card.MaterialCardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

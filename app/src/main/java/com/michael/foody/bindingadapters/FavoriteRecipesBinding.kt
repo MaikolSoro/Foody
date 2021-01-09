@@ -16,8 +16,7 @@ class FavoriteRecipesBinding {
         @JvmStatic
         fun setDataAndViewVisibility(
             view: View,
-            favoritesEntity:
-            List<FavoritesEntity>?,
+            favoritesEntity: List<FavoritesEntity>?,
             mAdapter: FavoriteRecipesAdapter?
         ) {
             if (favoritesEntity.isNullOrEmpty()) {
@@ -47,5 +46,7 @@ class FavoriteRecipesBinding {
                 }
             }
         }
+
     }
+
 }
