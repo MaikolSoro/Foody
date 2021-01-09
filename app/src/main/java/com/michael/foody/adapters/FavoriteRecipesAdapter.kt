@@ -1,6 +1,7 @@
 package com.michael.foody.adapters
 
 import android.view.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.FragmentActivity
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.DiffUtil
@@ -70,21 +71,15 @@ class FavoriteRecipesAdapter(
         return favoritesRecipes.size
     }
 
-    fun setData(newFavoritesRecipes: List<FavoritesEntity>) {
-
-        val favoriteRecipesDiffUtil = RecipesDiffUtil(favoritesRecipes, newFavoritesRecipes)
-        val diffUtilResult = DiffUtil.calculateDiff(favoriteRecipesDiffUtil)
-        favoritesRecipes = newFavoritesRecipes
-        diffUtilResult.dispatchUpdatesTo(this)
-    }
 
     override fun onCreateActionMode(actionMode: ActionMode?, menu: Menu?): Boolean {
         actionMode?.menuInflater?.inflate(R.menu.favorites_contextual_menu, menu)
+        applyStatusBarColor(R.color.contextualStatusBarColor)
         return true
     }
 
     override fun onPrepareActionMode(actionMode: ActionMode?, menu: Menu?): Boolean {
-       return true
+        return true
     }
 
     override fun onActionItemClicked(actionMode: ActionMode?, menu: MenuItem?): Boolean {
@@ -92,6 +87,18 @@ class FavoriteRecipesAdapter(
     }
 
     override fun onDestroyActionMode(actionMode: ActionMode?) {
-        TODO("Not yet implemented")
+        applyStatusBarColor(R.color.statusBarColor)
+    }
+
+    private fun applyStatusBarColor(color: Int) {
+        requireActivity.window.statusBarColor = ContextCompat.getColor(requireActivity, color)
+    }
+
+    fun setData(newFavoritesRecipes: List<FavoritesEntity>) {
+
+        val favoriteRecipesDiffUtil = RecipesDiffUtil(favoritesRecipes, newFavoritesRecipes)
+        val diffUtilResult = DiffUtil.calculateDiff(favoriteRecipesDiffUtil)
+        favoritesRecipes = newFavoritesRecipes
+        diffUtilResult.dispatchUpdatesTo(this)
     }
 }
