@@ -43,7 +43,7 @@ class FavoriteRecipesAdapter : RecyclerView.Adapter<FavoriteRecipesAdapter.MyVie
     }
 
     fun setData(newFavoritesRecipes: List<FavoritesEntity>) {
-        
+
         val favoriteRecipesDiffUtil = RecipesDiffUtil(favoritesRecipes, newFavoritesRecipes)
         val diffUtilResult = DiffUtil.calculateDiff(favoriteRecipesDiffUtil)
         favoritesRecipes = newFavoritesRecipes
