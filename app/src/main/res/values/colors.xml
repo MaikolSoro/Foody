@@ -26,6 +26,7 @@
 
     <color name="strokeColor">@color/lightMediumGray</color>
     <color name="cardBackgroundColor">@color/white</color>
+    <color name="cardBackgroundLightColor">#10F44336</color>
     <color name="titleColor">@color/darker</color>
 
     <color name="statusBarColor">@color/colorPrimaryDark</color>
