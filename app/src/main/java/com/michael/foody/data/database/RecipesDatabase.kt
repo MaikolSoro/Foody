@@ -8,7 +8,7 @@ import com.michael.foody.data.database.entities.RecipesEntity
 
 @Database(
     entities = [RecipesEntity::class, FavoritesEntity::class],
-    version = 2,
+    version = 1,
     exportSchema = false
 )
 @TypeConverters(RecipesTypeConverter::class)

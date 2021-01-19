@@ -18,7 +18,7 @@ interface RecipesDao {
     suspend fun insertFavoriteRecipe(favoritesEntity: FavoritesEntity)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun  insertFoodJoke(foodJokeEntity: FoodJokeEntity)
+    suspend fun insertFoodJoke(foodJokeEntity: FoodJokeEntity)
 
     @Query("SELECT * FROM recipes_table ORDER BY id ASC")
     fun readRecipes(): Flow<List<RecipesEntity>>
