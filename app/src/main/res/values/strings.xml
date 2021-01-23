@@ -38,4 +38,5 @@
     <string name="delete_favorite_menu">Delete Favorite Menu</string>
     <string name="delete_all">Delete All</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet assumenda dolore dolorem, doloremque ducimus eaque enim et, hic illo molestiae nihil numquam, provident quo reiciendis repudiandae saepe sunt voluptas!</string>
+    <string name="share">Share</string>
 </resources>
