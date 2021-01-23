@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="mainViewmModel"
+            name="mainViewModel"
             type="com.michael.foody.viewmodels.MainViewModel" />
     </data>
 
@@ -18,8 +18,10 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/food_joke_cardView"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            readApiResponse3="@{mainViewModel.foodJokeResponse}"
+            readDatabase3="@{mainViewModel.readFoodJoke}"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
@@ -66,6 +68,8 @@
             style="?android:attr/progressBarStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            readApiResponse3="@{mainViewModel.foodJokeResponse}"
+            readDatabase3="@{mainViewModel.readFoodJoke}"
             android:layout_marginBottom="24dp"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -77,6 +81,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:alpha="0.5"
+            readApiResponse4="@{mainViewModel.foodJokeResponse}"
+            readDatabase4="@{mainViewModel.readFoodJoke}"
             android:src="@drawable/ic_sad"
             android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
