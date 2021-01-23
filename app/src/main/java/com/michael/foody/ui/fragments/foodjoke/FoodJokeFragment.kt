@@ -30,7 +30,7 @@ class FoodJokeFragment : Fragment() {
     ): View {
         _binding = FragmentFoodJokeBinding.inflate(inflater, container, false)
         binding.lifecycleOwner = viewLifecycleOwner
-        binding.mainViewmModel = mainViewModel
+        binding.mainViewModel = mainViewModel
 
 
         mainViewModel.getFoodJoke(API_KEY)
@@ -58,8 +58,8 @@ class FoodJokeFragment : Fragment() {
     private fun loadDataFromCache() {
         lifecycleScope.launch {
             mainViewModel.readFoodJoke.observe(viewLifecycleOwner, { database ->
-                if (database.isNotEmpty() && database != null) {
-                    binding.foodJokeTextView.text = database[0].text
+                if (!database.isNullOrEmpty()) {
+                    binding.foodJokeTextView.text = database[0].foodJoke.text
                 }
             })
         }
