@@ -22,12 +22,12 @@ Develop beautiful and fully functional Android App in Android Studio using the p
 - RX Java and Android
 - OkHttp
 
-## Code Standards
+# Code Standards
 Write code and comments in english
 Try to follow android patterns and best practice [source 1] best_practice [source 2] performace_android
 
 
-## Contributing
+# Contributing
 1. Fork it!
 2. Create your feature branch: `git checkout -b my-new-feature`
 3. Commit your changes: `git commit -am 'Add some feature'`
