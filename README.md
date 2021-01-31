@@ -1,4 +1,4 @@
-# Foody
+# Foody ![Group 34@2x](https://user-images.githubusercontent.com/46753453/106399687-c3470380-63df-11eb-8976-4fde8f644f25.png)
 Develop beautiful and fully functional Android App in Android Studio using the power of Kotlin programming language.
 
 #  📷 Review
