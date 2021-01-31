@@ -1,4 +1,6 @@
-# Foody 
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46753453/106399898-0190f280-63e1-11eb-9496-93c6e9f17dcc.jpg" />
+</p>
 Develop beautiful and fully functional Android App in Android Studio using the power of Kotlin programming language.
 
 #  📷 Review
