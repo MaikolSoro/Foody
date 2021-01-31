@@ -5,7 +5,7 @@
 
 Develop beautiful and fully functional Android App in Android Studio using the power of Kotlin programming language.
 
-## App Architecture:📰📱
+## Architecture and Libraries 📰📱
 - Model-View-ViewModel (MVVM)
 - SQLite
 - Kotlin
