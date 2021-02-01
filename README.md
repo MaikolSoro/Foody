@@ -21,10 +21,9 @@ Develop beautiful and fully functional Android App in Android Studio using the p
 - Navigation 
 - RX Java and Android
 - OkHttp
-
 ### Code Standards
  - Write code and comments in english
- - Try to follow android patterns and best practice [source 1] [best_practice] [source 2] [performace_android]d
+ - Try to follow android patterns and best practice [source 1] [best_practice] [source 2] [performace_android]
 
 
 ### Contributing
