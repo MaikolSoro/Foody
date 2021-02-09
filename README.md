@@ -3,7 +3,7 @@
 </p>
 
 
-The application will work with ```local``` and ```remote``` data sources. And for the remote data source, a ```third-party API``` for food recipes, called Spoonacular, was used. I am going to teach you how to establish a connection between your application and the server. So basically we will send a ```GET request``` to our ```API ``` and receive a list of food recipes as a response. Also, the application will not be able to handle any internet connection and store or cache the data locally in the database when needed.
+The application will work with ```local``` and ```remote``` data sources. And for the remote data source, a ```third-party API``` for food recipes, called ```Spoonacular```, was used. I am going to teach you how to establish a connection between your application and the server. So basically we will send a ```GET request``` to our ```API ``` and receive a list of food recipes as a response. Also, the application will not be able to handle any internet connection and store or cache the data locally in the database when needed.
 
 Also from the application we can search recipes directly from our API. So if you have your favorite flavor, you can search for it here and you will probably find a lot of amazing recipes. It will also have Favorites Fragment where we can save our favorite recipes to use later when we need them. And finally the app will have its fun side, and that's a food joke snippet.
 
