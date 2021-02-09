@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.observe
 import com.michael.foody.R
 import com.michael.foody.databinding.FragmentFoodJokeBinding
 import com.michael.foody.util.Constants.Companion.API_KEY

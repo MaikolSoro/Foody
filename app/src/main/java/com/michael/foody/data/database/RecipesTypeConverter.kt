@@ -8,8 +8,7 @@ import com.michael.foody.models.Result
 
 class RecipesTypeConverter {
 
-
-    var gson = Gson()
+  var gson = Gson()
 
     @TypeConverter
     fun foodRecipeToString(foodRecipe: FoodRecipe): String {
