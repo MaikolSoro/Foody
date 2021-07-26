@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setTheme(R.style.AppTheme)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        setTheme(R.style.AppTheme)
         setContentView(binding.root)
 
         navController = findNavController(R.id.navHostFragment)
