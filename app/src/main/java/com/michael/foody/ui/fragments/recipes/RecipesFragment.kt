@@ -62,7 +62,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
         recipesViewModel.readBackOnline.observe(viewLifecycleOwner, {
             recipesViewModel.backOnline = it
         })
-        lifecycleScope.launch {
+        lifecycleScope.launchWhenStarted {
             networkListener = NetworkListener()
             networkListener.checkNetworkAvailability(requireContext())
                 .collect { status ->
@@ -107,6 +107,7 @@ class RecipesFragment : Fragment(), SearchView.OnQueryTextListener {
             searchApiData(query)
         }
         return true
+
     }
 
     override fun onQueryTextChange(query: String?): Boolean {
