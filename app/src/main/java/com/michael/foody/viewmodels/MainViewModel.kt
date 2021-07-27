@@ -12,12 +12,14 @@ import com.michael.foody.data.database.entities.RecipesEntity
 import com.michael.foody.models.FoodJoke
 import com.michael.foody.models.FoodRecipe
 import com.michael.foody.util.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
 import javax.inject.Inject
 
+@HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository,
     application: Application
