@@ -27,12 +27,14 @@ import java.lang.Exception
 @AndroidEntryPoint
 class DetailsActivity : AppCompatActivity() {
 
-    private val args by navArgs<DetailsActivityArgs>()
     private lateinit var binding: ActivityDetailsBinding
+
+    private val args by navArgs<DetailsActivityArgs>()
     private val mainViewModel: MainViewModel by viewModels()
 
     private var recipeSaved = false
     private var savedRecipeId = 0
+
     private lateinit var menuItem: MenuItem
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,7 +78,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.details_menu, menu)
          menuItem = menu!!.findItem(R.id.save_to_favorites_menu)
-        checkSavedRecipes(menuItem!!)
+        checkSavedRecipes(menuItem)
         return true
     }
 
