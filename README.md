@@ -6,8 +6,7 @@
 The application will work with ```local``` and ```remote``` data sources. And for the remote data source, a ```third-party API``` for food recipes, called ```Spoonacular```, was used. I am going to teach you how to establish a connection between your application and the server. So basically we will send a ```GET request``` to our ```API ``` and receive a list of food recipes as a response. Also, the application will not be able to handle any internet connection and store or cache the data locally in the database when needed.
 
 Also from the application we can search recipes directly from our API. So if you have your favorite flavor, you can search for it here and you will probably find a lot of amazing recipes. It will also have Favorites Fragment where we can save our favorite recipes to use later when we need them. And finally the app will have its fun side, and that's a food joke snippet.
-
-## Architecture and Libraries 📰📱
+## Built With 🛠
 - Model-View-ViewModel (MVVM)
 - SQLite
 - Kotlin
@@ -28,10 +27,21 @@ Also from the application we can search recipes directly from our API. So if you
 - Motion Layout
 - Material Design
 - ViewPager2
+
+## Architecture
+This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
+
+![ANDROID ROOM DB DIAGRAM](https://user-images.githubusercontent.com/46753453/134743519-83e2395d-3902-4683-96f4-0f06dbf8de77.jpg)
+
+## Contact
+Have an project? DM me at 👇
+
+Drop a mail to:- maikolsoro.z1998@gmail.com
+
+
 ### Code Standards
  - Write code and comments in english
  - Try to follow android patterns and best practice [source 1] [best_practice] [source 2] [performace_android]
-
 
 ### Contributing
 1. Fork it!
@@ -47,7 +57,7 @@ Also from the application we can search recipes directly from our API. So if you
 [best_practice]: <https://www.youtube.com/playlist?list=PLWz5rJ2EKKc-lJo_RGGXL2Psr8vVCTWjM>
 [performace_android]: <https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE>
 
-### License
+### 🔖 License
 ```
 MIT License
 
