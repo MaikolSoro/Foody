@@ -54,8 +54,48 @@ Drop a mail to:- maikolsoro.z1998@gmail.com
 5. Submit a pull request and enjoy! :D
 
 
-#  📷 Review
-![68747470733a2f2f692e706f7374696d672e63632f36707430475435342f5468756d626e61696c2d312e706e67](https://user-images.githubusercontent.com/46753453/103448680-a1345700-4c62-11eb-9169-07e321385df2.png)
+#  Foody ❤️
+🌞 Light Mode
+<table style="width:100%">
+  <tr>
+    <th>1. Splash Screen </th>
+    <th>2. Recipes Screen </th> 
+    <th>3. Meal Type </th>
+    <th>4. Favorites Screen </th> 
+    <th>5. Details Screen </th> 
+    <th>6. Food Joke  </th> 
+  </tr>
+  <tr>
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676592-5f7f3a83-3937-4381-8c78-50179993a315.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676545-7c661447-55ab-4f99-ac48-3a3cb264aff3.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676559-11c72c31-c8f7-412b-9ec2-3bd9991b791a.png" /></td>
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676565-e2b1479c-4f40-46c3-b03f-0777497d173e.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676569-1465bf4a-b10e-4036-a6cd-3740dc8fbe0d.png"/></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676570-f0747940-3521-44ec-a795-bd8159e534bf.png"/></td> 
+  </tr>
+</table>
+
+🌙 Dark Mode
+<table style="width:100%">
+  <tr>
+    <th>1. Recipes Screen </th> 
+    <th>2. Meal Type </th>
+    <th>3. Favorites Screen </th> 
+    <th>4. Details Screen </th> 
+    <th>5. Food Joke  </th> 
+    <th>6. Ingredients </th> 
+    <th>7. Instructions  </th> 
+  </tr>
+  <tr>
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676686-8c9173ac-cc62-4a7b-b7b2-666e0e69bf44.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676703-f2248a7e-10b7-4495-99ae-8dffd5c5dcab.png" /></td>
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676710-4266e6e6-2522-4043-bd64-4e4fb8fbe29c.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676712-aacc9839-b92a-4d26-a94c-7cc5cca83a10.png"/></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676718-7778aac7-de41-42cb-b3a5-d8d455a68f13.png" /></td> 
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676726-849ab6d6-5fd6-4b74-a79d-c8770e6e487e.png" /></td>
+    <td><img src = "https://user-images.githubusercontent.com/46753453/136676740-1a163ffc-62e3-4491-a814-4a115d609f30.png" /></td> 
+  </tr>
+</table>
 
 [best_practice]: <https://www.youtube.com/playlist?list=PLWz5rJ2EKKc-lJo_RGGXL2Psr8vVCTWjM>
 [performace_android]: <https://www.youtube.com/playlist?list=PLWz5rJ2EKKc9CBxr3BVjPTPoDPLdPIFCE>
