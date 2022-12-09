@@ -15,7 +15,7 @@ class FoodJokeBinding {
 
         @BindingAdapter("readApiResponse3", "readDatabase3", requireAll = false)
         @JvmStatic
-        fun setCardProgressVisibility(
+        fun setCardAndProgressVisibility(
             view: View,
             apiResponse: NetworkResult<FoodJoke>?,
             database: List<FoodJokeEntity>?
@@ -38,7 +38,6 @@ class FoodJokeBinding {
                         }
                         is MaterialCardView -> {
                             view.visibility = View.VISIBLE
-
                             if (database != null) {
                                 if (database.isEmpty()) {
                                     view.visibility = View.INVISIBLE
@@ -48,7 +47,7 @@ class FoodJokeBinding {
                     }
                 }
                 is NetworkResult.Success -> {
-                    when (view) {
+                    when(view){
                         is ProgressBar -> {
                             view.visibility = View.INVISIBLE
                         }
@@ -57,30 +56,32 @@ class FoodJokeBinding {
                         }
                     }
                 }
+                else -> {}
             }
         }
 
         @BindingAdapter("readApiResponse4", "readDatabase4", requireAll = true)
         @JvmStatic
-        fun setErrorViewVisibility(
+        fun setErrorViewsVisibility(
             view: View,
             apiResponse: NetworkResult<FoodJoke>?,
             database: List<FoodJokeEntity>?
-        ) {
-
-            if (database != null) {
-                if (database.isEmpty()) {
+        ){
+            if(database != null){
+                if(database.isEmpty()){
                     view.visibility = View.VISIBLE
-                    if (view is TextView) {
-                        if (apiResponse != null) {
+                    if(view is TextView){
+                        if(apiResponse != null){
                             view.text = apiResponse.message.toString()
                         }
                     }
                 }
             }
-            if (apiResponse is NetworkResult.Success) {
+            if(apiResponse is NetworkResult.Success){
                 view.visibility = View.INVISIBLE
             }
         }
+
     }
+
 }

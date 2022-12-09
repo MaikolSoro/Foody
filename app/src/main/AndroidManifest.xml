@@ -18,9 +18,12 @@
         <activity
             android:name=".ui.DetailsActivity"
             android:label="Details"
+            android:screenOrientation="portrait"
             android:theme="@style/DetailsActivityStyle" />
-
-        <activity android:name=".ui.MainActivity">
+        <activity
+            android:name=".ui.MainActivity"
+            android:screenOrientation="portrait"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,5 +35,4 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>

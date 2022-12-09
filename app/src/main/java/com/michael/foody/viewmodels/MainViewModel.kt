@@ -4,6 +4,7 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import android.os.Parcelable
 import androidx.lifecycle.*
 import com.michael.foody.data.Repository
 import com.michael.foody.data.database.entities.FavoritesEntity
@@ -25,11 +26,12 @@ class MainViewModel @Inject constructor(
     application: Application
 ) : AndroidViewModel(application) {
 
-    /** ROOM DATABASE **/
+    var recyclerViewState: Parcelable? = null
+
+    /** ROOM DATABASE */
 
     val readRecipes: LiveData<List<RecipesEntity>> = repository.local.readRecipes().asLiveData()
-    val readFavoriteRecipes: LiveData<List<FavoritesEntity>> =
-        repository.local.readFavoriteRecipes().asLiveData()
+    val readFavoriteRecipes: LiveData<List<FavoritesEntity>> = repository.local.readFavoriteRecipes().asLiveData()
     val readFoodJoke: LiveData<List<FoodJokeEntity>> = repository.local.readFoodJoke().asLiveData()
 
     private fun insertRecipes(recipesEntity: RecipesEntity) =
@@ -42,7 +44,7 @@ class MainViewModel @Inject constructor(
             repository.local.insertFavoriteRecipes(favoritesEntity)
         }
 
-    fun insertFoodJoke(foodJokeEntity: FoodJokeEntity) =
+    private fun insertFoodJoke(foodJokeEntity: FoodJokeEntity) =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.insertFoodJoke(foodJokeEntity)
         }
@@ -52,12 +54,12 @@ class MainViewModel @Inject constructor(
             repository.local.deleteFavoriteRecipe(favoritesEntity)
         }
 
-    fun deleteAllFavoritesRecipes() =
+    fun deleteAllFavoriteRecipes() =
         viewModelScope.launch(Dispatchers.IO) {
             repository.local.deleteAllFavoriteRecipes()
         }
 
-    /**  RETROFIT **/
+    /** RETROFIT */
     var recipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     var searchedRecipesResponse: MutableLiveData<NetworkResult<FoodRecipe>> = MutableLiveData()
     var foodJokeResponse: MutableLiveData<NetworkResult<FoodJoke>> = MutableLiveData()
@@ -74,15 +76,15 @@ class MainViewModel @Inject constructor(
         getFoodJokeSafeCall(apiKey)
     }
 
-
     private suspend fun getRecipesSafeCall(queries: Map<String, String>) {
         recipesResponse.value = NetworkResult.Loading()
         if (hasInternetConnection()) {
             try {
                 val response = repository.remote.getRecipes(queries)
                 recipesResponse.value = handleFoodRecipesResponse(response)
+
                 val foodRecipe = recipesResponse.value!!.data
-                if (foodRecipe != null) {
+                if(foodRecipe != null) {
                     offlineCacheRecipes(foodRecipe)
                 }
             } catch (e: Exception) {
@@ -113,8 +115,9 @@ class MainViewModel @Inject constructor(
             try {
                 val response = repository.remote.getFoodJoke(apiKey)
                 foodJokeResponse.value = handleFoodJokeResponse(response)
+
                 val foodJoke = foodJokeResponse.value!!.data
-                if (foodJoke != null){
+                if(foodJoke != null){
                     offlineCacheFoodJoke(foodJoke)
                 }
             } catch (e: Exception) {
@@ -135,8 +138,7 @@ class MainViewModel @Inject constructor(
         insertFoodJoke(foodJokeEntity)
     }
 
-    private fun handleFoodRecipesResponse(response: retrofit2.Response<FoodRecipe>): NetworkResult<FoodRecipe>? {
-
+    private fun handleFoodRecipesResponse(response: Response<FoodRecipe>): NetworkResult<FoodRecipe> {
         when {
             response.message().toString().contains("timeout") -> {
                 return NetworkResult.Error("Timeout")
@@ -157,22 +159,20 @@ class MainViewModel @Inject constructor(
         }
     }
 
-    private fun handleFoodJokeResponse(response: Response<FoodJoke>): NetworkResult<FoodJoke>? {
-
+    private fun handleFoodJokeResponse(response: Response<FoodJoke>): NetworkResult<FoodJoke> {
         return when {
             response.message().toString().contains("timeout") -> {
-                return NetworkResult.Error("Timeout")
+                NetworkResult.Error("Timeout")
             }
             response.code() == 402 -> {
-                return NetworkResult.Error("API Key Limited.")
+                NetworkResult.Error("API Key Limited.")
             }
-
             response.isSuccessful -> {
                 val foodJoke = response.body()
-                return NetworkResult.Success(foodJoke!!)
+                NetworkResult.Success(foodJoke!!)
             }
             else -> {
-                return NetworkResult.Error(response.message())
+                NetworkResult.Error(response.message())
             }
         }
     }
@@ -181,9 +181,8 @@ class MainViewModel @Inject constructor(
         val connectivityManager = getApplication<Application>().getSystemService(
             Context.CONNECTIVITY_SERVICE
         ) as ConnectivityManager
-        val activeNetWork = connectivityManager.activeNetwork ?: return false
-        val capabilities = connectivityManager.getNetworkCapabilities(activeNetWork) ?: return false
-
+        val activeNetwork = connectivityManager.activeNetwork ?: return false
+        val capabilities = connectivityManager.getNetworkCapabilities(activeNetwork) ?: return false
         return when {
             capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
             capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
@@ -191,4 +190,5 @@ class MainViewModel @Inject constructor(
             else -> false
         }
     }
+
 }
