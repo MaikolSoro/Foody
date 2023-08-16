@@ -10,6 +10,8 @@ import com.michael.foody.R
 import com.michael.foody.databinding.FragmentInstructionsBinding
 import com.michael.foody.models.Result
 import com.michael.foody.util.Constants
+import com.michael.foody.util.Constants.Companion.RECIPE_RESULT_KEY
+import com.michael.foody.util.retrieveParcelable
 
 class InstructionsFragment : Fragment() {
 
@@ -25,7 +27,7 @@ class InstructionsFragment : Fragment() {
         _binding = FragmentInstructionsBinding.inflate(inflater, container, false)
 
         val args = arguments
-        val myBundle: Result? = args?.getParcelable(Constants.RECIPE_RESULT_KEY)
+        val myBundle: Result? = args?.retrieveParcelable(RECIPE_RESULT_KEY)
 
         binding.instructionsWebView.webViewClient = object : WebViewClient() {}
         val websiteUrl: String = myBundle!!.sourceUrl
