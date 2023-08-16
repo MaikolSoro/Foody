@@ -50,7 +50,6 @@ class DetailsActivity : AppCompatActivity() {
         fragments.add(IngredientsFragment())
         fragments.add(InstructionsFragment())
 
-
         val titles = ArrayList<String>()
         titles.add("Overview")
         titles.add("Ingredients")
@@ -76,14 +75,12 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.details_menu, menu)
-         menuItem = menu!!.findItem(R.id.save_to_favorites_menu)
+        menuItem = menu!!.findItem(R.id.save_to_favorites_menu)
         checkSavedRecipes(menuItem)
         return true
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
         if (item.itemId == android.R.id.home) {
             finish()
         } else if (item.itemId == R.id.save_to_favorites_menu && !recipeSaved) {
@@ -115,7 +112,6 @@ class DetailsActivity : AppCompatActivity() {
             FavoritesEntity(
                 0,
                 args.result
-
             )
         mainViewModel.insertFavoriteRecipe(favoritesEntity)
         changeMenuItemColor(item, R.color.yellow)
@@ -126,12 +122,12 @@ class DetailsActivity : AppCompatActivity() {
     private fun removeFromFavorites(item: MenuItem) {
         val favoritesEntity =
             FavoritesEntity(
-                0,
+                savedRecipeId,
                 args.result
             )
         mainViewModel.deleteFavoriteRecipe(favoritesEntity)
         changeMenuItemColor(item, R.color.white)
-        showSnackBar("Removed from favorites.")
+        showSnackBar("Removed from Favorites.")
         recipeSaved = false
     }
 
@@ -140,7 +136,6 @@ class DetailsActivity : AppCompatActivity() {
             binding.detailsLayout,
             message,
             Snackbar.LENGTH_SHORT
-
         ).setAction("Okay") {}
             .show()
     }

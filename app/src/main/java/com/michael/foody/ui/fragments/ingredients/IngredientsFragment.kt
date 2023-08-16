@@ -10,6 +10,7 @@ import com.michael.foody.adapters.IngredientsAdapter
 import com.michael.foody.databinding.FragmentIngredientsBinding
 import com.michael.foody.models.Result
 import com.michael.foody.util.Constants.Companion.RECIPE_RESULT_KEY
+import com.michael.foody.util.retrieveParcelable
 
 
 class IngredientsFragment : Fragment() {
@@ -26,7 +27,7 @@ class IngredientsFragment : Fragment() {
         // Inflate the layout for this fragment
         _binding = FragmentIngredientsBinding.inflate(inflater, container, false)
         val args = arguments
-        val myBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
+        val myBundle: Result? = args?.retrieveParcelable(RECIPE_RESULT_KEY)
 
         setupRecyclerView()
         myBundle?.extendedIngredients?.let { mAdapter.setData(it) }
